@@ -81,6 +81,7 @@ const midwives = [
     id: "midwife-a",
     name: "Ty, Everrt Joyce",
     initials: "TE",
+    photo: "images/mid-a.png",
     credential: "Registered Midwife",
     services: ["Prenatal Care", "Postpartum Care", "Breastfeeding Support"],
     about:
@@ -90,6 +91,7 @@ const midwives = [
     id: "midwife-b",
     name: "Abalos, Ivy Maricar",
     initials: "AI",
+    photo: "images/mid-b.png",
     credential: "Registered Midwife",
     services: [
       "Prenatal Care",
@@ -103,6 +105,7 @@ const midwives = [
     id: "midwife-c",
     name: "Gabaldon, Jana Ishi",
     initials: "GJ",
+    photo: "images/mid-c.png",
     credential: "Registered Midwife",
     services: ["Prenatal Care", "Postpartum Care", "Newborn Care Guidance"],
     about:
@@ -112,6 +115,7 @@ const midwives = [
     id: "midwife-d",
     name: "Iligan, Lykah Laurence",
     initials: "IL",
+    photo: "images/mid-d.png",
     credential: "Registered Midwife",
     services: [
       "Prenatal Care",
@@ -213,8 +217,12 @@ function renderMidwives() {
     .map(
       (midwife) => `
     <article class="midwife-card">
-      <div class="midwife-head">
-        <div class="avatar">${midwife.initials}</div>
+      <div class="midwife-head">        
+        <img
+          class="midwife-photo"
+          src="${midwife.photo}"
+          alt="${midwife.name}"
+        >
         <div><h3>${midwife.name}</h3><div class="sub">${midwife.credential}</div></div>
       </div>
       <div class="tag-row">${midwife.services.map((service) => `<span class="tag">${service}</span>`).join("")}</div>
@@ -251,7 +259,11 @@ function openProfile(id) {
   if (!midwife) return;
   $("profileContent").innerHTML = `
     <div class="midwife-head" style="margin:8px 0 16px">
-      <div class="avatar">${midwife.initials}</div>
+      <img
+        class="midwife-photo profile-photo"
+        src="${midwife.photo}"
+        alt="${midwife.name}"
+      >
       <div><h2 id="profileTitle">${midwife.name}</h2><p class="profile-meta">${midwife.credential}</p></div>
     </div>
     <p>${midwife.about}</p>
