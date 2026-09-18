@@ -21,12 +21,12 @@ or a PHP web host.
 QUICK XAMPP SETUP
 -----------------
 1. Copy the whole HER CARE folder into:
-   C:\xampp\htdocs\her-care\
+   C:\xampp\htdocs\her-care-notif\
 
 2. Start Apache in XAMPP.
 
 3. Open:
-   http://localhost/her-care/
+   http://localhost/her-care-notif/
 
 4. Configure notifications in config.php before testing.
 
